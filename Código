@@ -16,6 +16,7 @@ def menu_principal():
         print("3 - Atualizar Receita Existente")
         print("4 - Deletar Receita")
         print("5 - Filtrar Receitas Por País")
+        print("6 - Escolher receita por ingredientes")
         print("0 - Sair")
         
         escolha = input("Escolha uma opção: ")
@@ -30,6 +31,8 @@ def menu_principal():
             deletar_receita()
         elif escolha == '5':
             filtrar_por_pais()
+        elif escolha == '6':
+            buscar_por_ingredientes()
         elif escolha == '0':
             print("Saindo do sistema...")
             break
@@ -130,6 +133,20 @@ def filtrar_por_pais():
     
     if not encontrou:
         print("Não foram encontradas receitas para o país informado.\n")
+def buscar_por_ingredientes():
+    ingredientes_desejados = input("Digite os ingredientes desejados (separados por vírgula): ").split(", ")
+    encontrou = False
+    
+    with open(arquivo_receitas, 'r', newline='', encoding='utf-8') as f:
+        reader = csv.reader(f)
+        for row in reader:
+            ingredientes_receita = row[2].split(", ")
+            if set(ingredientes_desejados).issubset(set(ingredientes_receita)):
+                print(f"Nome: {row[0]}, País: {row[1]}, Modo de Preparo: {row[3]}")
+                encontrou = True
+    
+    if not encontrou:
+        print("Não foram encontradas receitas com os ingredientes informados.\n")
 
 if __name__ == "__main__":
     menu_principal()
