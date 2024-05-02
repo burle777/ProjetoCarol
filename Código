@@ -4,9 +4,11 @@ import random
 
 arquivo_receitas = "receitas.csv"
 
+
 def limpar_tela():
     os.system('cls' if os.name == 'nt' else 'clear')
     
+
 def menu_principal():
     while True:
         limpar_tela()
@@ -16,7 +18,8 @@ def menu_principal():
         print("3 - Atualizar Receita Existente")
         print("4 - Deletar Receita")
         print("5 - Filtrar Receitas Por País")
-        print("6 - Escolher receita por ingredientes")
+        print("6 - Sugestão de Receita Aleatória")
+        print("7 - Escolher receita por ingredientes")
         print("0 - Sair")
         
         escolha = input("Escolha uma opção: ")
@@ -32,6 +35,8 @@ def menu_principal():
         elif escolha == '5':
             filtrar_por_pais()
         elif escolha == '6':
+            receita_aleatoria()
+        elif escolha == '7':
             buscar_por_ingredientes()
         elif escolha == '0':
             print("Saindo do sistema...")
@@ -133,6 +138,23 @@ def filtrar_por_pais():
     
     if not encontrou:
         print("Não foram encontradas receitas para o país informado.\n")
+
+
+def receita_aleatoria():
+    try:
+        with open(arquivo_receitas, 'r', newline='', encoding='utf-8') as f:
+            reader = csv.reader(f)
+            receitas = list(reader)
+            receita_aleatoria = random.choice(receitas)
+            print("Sugestão de receita aleatória: ")
+            print(f'Nome: {receita_aleatoria[0]}')
+            print(f'País: {receita_aleatoria[1]}')
+            print(f'Ingredientes: {receita_aleatoria[2]}')
+            print(f'Modo de preparo: {receita_aleatoria[3]}')
+    except FileNotFoundError:
+        print("Ainda não há receitas cadastradas.\n")
+
+
 def buscar_por_ingredientes():
     ingredientes_desejados = input("Digite os ingredientes desejados (separados por vírgula): ").split(", ")
     encontrou = False
@@ -147,6 +169,7 @@ def buscar_por_ingredientes():
     
     if not encontrou:
         print("Não foram encontradas receitas com os ingredientes informados.\n")
+
 
 if __name__ == "__main__":
     menu_principal()
