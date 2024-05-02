@@ -157,7 +157,7 @@ def receita_aleatoria():
 
 def buscar_por_ingredientes():
     ingredientes_desejados = set(input("Digite os ingredientes desejados (separados por vírgula): ").split(", "))
-    encontrou = False
+    encontrou = False 
     
     with open(arquivo_receitas, 'r', newline='', encoding='utf-8') as f:
         reader = csv.reader(f)
