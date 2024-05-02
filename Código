@@ -156,20 +156,19 @@ def receita_aleatoria():
 
 
 def buscar_por_ingredientes():
-    ingredientes_desejados = input("Digite os ingredientes desejados (separados por vírgula): ").split(", ")
+    ingredientes_desejados = set(input("Digite os ingredientes desejados (separados por vírgula): ").split(", "))
     encontrou = False
     
     with open(arquivo_receitas, 'r', newline='', encoding='utf-8') as f:
         reader = csv.reader(f)
         for row in reader:
-            ingredientes_receita = row[2].split(", ")
-            if set(ingredientes_desejados).issubset(set(ingredientes_receita)):
+            ingredientes_receita = set(row[2].split(", "))
+            if ingredientes_desejados.issubset(ingredientes_receita):
                 print(f"Nome: {row[0]}, País: {row[1]}, Modo de Preparo: {row[3]}")
                 encontrou = True
     
     if not encontrou:
         print("Não foram encontradas receitas com os ingredientes informados.\n")
-
 
 if __name__ == "__main__":
     menu_principal()
