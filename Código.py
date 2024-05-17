@@ -173,7 +173,7 @@ def buscar_por_ingredientes():
         print("Não foram encontradas receitas com os ingredientes informados.\n")
 
 def fav():
-    nome_receita = input("Digite o nome da receita que deseja adicionar aos favoritos: ")
+    nome_receita = input("Digite a receita que deseja adicionar aos favoritos: ")
     receitas = []
     
     with open(arquivo_receitas, 'r', newline='', encoding='utf-8') as f:
