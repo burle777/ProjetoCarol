@@ -4,10 +4,8 @@ import random
 
 arquivo_receitas = "receitas.csv"
 
-
 def limpar_tela():
     os.system('cls' if os.name == 'nt' else 'clear')
-    
 
 def menu_principal():
     while True:
@@ -56,13 +54,12 @@ def menu_principal():
         
         input("Pressione Enter para continuar...")    
 
-
 def adicionar_receita():
     nome = input("Nome da receita: ")
     pais = input("País de origem: ")
     ingredientes = input("Ingredientes (separados por vírgula): ")
     modo_preparo = input("Modo de preparo: ")
-    nova_receita = [nome, pais, ingredientes, modo_preparo]
+    nova_receita = [nome, pais, ingredientes, modo_preparo, "False"]
     
     with open(arquivo_receitas, 'a', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
@@ -70,16 +67,14 @@ def adicionar_receita():
     
     print("Receita adicionada com sucesso!\n")
 
-
 def visualizar_receitas():
     try:
         with open(arquivo_receitas, 'r', newline='', encoding='utf-8') as f:
             reader = csv.reader(f)
             for i, row in enumerate(reader, 1):
-                print(f"{i}. Nome: {row[0]}, País: {row[1]}, Ingredientes: {row[2]}, Modo de Preparo: {row[3]}")
+                print(f"{i}. Nome: {row[0]}, País: {row[1]}, Ingredientes: {row[2]}, Modo de Preparo: {row[3]}, Favorito: {row[4]}")
     except FileNotFoundError:
         print("Ainda não há receitas cadastradas.\n")
-
 
 def atualizar_receita():
     visualizar_receitas()
@@ -113,7 +108,6 @@ def atualizar_receita():
     else:
         print("Número da receita inválido.\n")
 
-
 def deletar_receita():
     visualizar_receitas()
     index = int(input("Digite o número da receita que deseja deletar: ")) - 1
@@ -134,7 +128,6 @@ def deletar_receita():
     else:
         print("Número da receita inválido.\n")
 
-
 def filtrar_por_pais():
     pais_desejado = input("Digite o país cujas receitas você deseja visualizar: ").lower()
     encontrou = False
@@ -143,12 +136,11 @@ def filtrar_por_pais():
         reader = csv.reader(f)
         for row in reader:
             if row[1].lower() == pais_desejado:
-                print(f"Nome: {row[0]}, Ingredientes: {row[2]}, Modo de Preparo: {row[3]}")
+                print(f"Nome: {row[0]}, Ingredientes: {row[2]}, Modo de Preparo: {row[3]}, Favorito: {row[4]}")
                 encontrou = True
     
     if not encontrou:
         print("Não foram encontradas receitas para o país informado.\n")
-
 
 def receita_aleatoria():
     try:
@@ -161,9 +153,9 @@ def receita_aleatoria():
             print(f'País: {receita_aleatoria[1]}')
             print(f'Ingredientes: {receita_aleatoria[2]}')
             print(f'Modo de preparo: {receita_aleatoria[3]}')
+            print(f'Favorito: {receita_aleatoria[4]}')
     except FileNotFoundError:
         print("Ainda não há receitas cadastradas.\n")
-
 
 def buscar_por_ingredientes():
     ingredientes_desejados = set(input("Digite os ingredientes desejados (separados por vírgula): ").split(", "))
@@ -174,24 +166,34 @@ def buscar_por_ingredientes():
         for row in reader:
             ingredientes_receita = set(row[2].split(", "))
             if ingredientes_desejados.issubset(ingredientes_receita):
-                print(f"Nome: {row[0]}, País: {row[1]}, Modo de Preparo: {row[3]}")
+                print(f"Nome: {row[0]}, País: {row[1]}, Modo de Preparo: {row[3]}, Favorito: {row[4]}")
                 encontrou = True
     
     if not encontrou:
         print("Não foram encontradas receitas com os ingredientes informados.\n")
 
-if __name__ == "__main__":
-    menu_principal()
-
 def fav():
-    nome_receita = input("Digite a receita que deseja adicionar a lista de favoritos")
+    nome_receita = input("Digite o nome da receita que deseja adicionar aos favoritos: ")
+    receitas = []
+    
     with open(arquivo_receitas, 'r', newline='', encoding='utf-8') as f:
         reader = csv.reader(f)
-        favoritos = []
-        for row in reader:
-            if row[0] == nome_receita:
-                row[-1] = 'True'
-                break
-    with open(arquivo_receitas, 'w', newline='', encoding='utf-8') as f:
-        writer = csv.writer(f)
-        writer.writerows(favoritos)
+        receitas = list(reader)
+    
+    encontrou = False
+    for receita in receitas:
+        if receita[0].lower() == nome_receita.lower():
+            receita[4] = "True"
+            encontrou = True
+            break
+    
+    if encontrou:
+        with open(arquivo_receitas, 'w', newline='', encoding='utf-8') as f:
+            writer = csv.writer(f)
+            writer.writerows(receitas)
+        print("Receita adicionada aos favoritos com sucesso!\n")
+    else:
+        print("Receita não encontrada.\n")
+
+if __name__ == "__main__":
+    menu_principal()

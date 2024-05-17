@@ -1,4 +1,4 @@
-bolo,italia,"farinha,açúcar,ovos,leite,fermento,sal","misturar os ingredientes secos, adicionar os líquidos, bater bem, assar em forno pré-aquecido a 180°C por 30-35 minutos",False
+bolo,italia,"farinha,açúcar,ovos,leite,fermento,sal","misturar os ingredientes secos, adicionar os líquidos, bater bem, assar em forno pré-aquecido a 180°C por 30-35 minutos",True
 pão,frança,"farinha,água,sal,fermento","misturar os ingredientes, deixar a massa descansar, modelar pães, assar em forno pré-aquecido a 200°C por 20-25 minutos",False
 sopa,portugal,"batata,cenoura,cebola,alho,azeite,sal","cozinhar os ingredientes, bater no liquidificador até obter um creme homogêneo, servir quente",False
 pizza,itália,"farinha,fermento,água,sal,molho de tomate,queijo,orégano","preparar a massa, espalhar molho de tomate, adicionar queijo e orégano, assar em forno pré-aquecido a 220°C por 15-20 minutos",False
