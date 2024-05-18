@@ -179,6 +179,8 @@ def receita_aleatoria():
             print(f'Modo de preparo: {receita_aleatoria[3]}')
     except FileNotFoundError:
         print("Ainda não há receitas cadastradas.\n")
+    except Exception:
+        print("Erro ao adicionar uma receita aleatória!\n")
 
 
 def buscar_por_ingredientes():
