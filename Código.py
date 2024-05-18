@@ -150,15 +150,20 @@ def filtrar_por_pais():
     pais_desejado = input("Digite o país cujas receitas você deseja visualizar: ").lower()
     encontrou = False
     
-    with open(arquivo_receitas, 'r', newline='', encoding='utf-8') as f:
-        reader = csv.reader(f)
-        for row in reader:
-            if row[1].lower() == pais_desejado:
-                print(f"Nome: {row[0]}, Ingredientes: {row[2]}, Modo de Preparo: {row[3]}")
-                encontrou = True
-    
-    if not encontrou:
-        print("Não foram encontradas receitas para o país informado.\n")
+    try:
+        with open(arquivo_receitas, 'r', newline='', encoding='utf-8') as f:
+            reader = csv.reader(f)
+            for row in reader:
+                if row[1].lower() == pais_desejado:
+                    print(f"Nome: {row[0]}, Ingredientes: {row[2]}, Modo de Preparo: {row[3]}")
+                    encontrou = True
+        
+        if not encontrou:
+            print("Não foram encontradas receitas para o país informado.\n")
+    except FileNotFoundError:
+        print("Ainda não há nenhuma receita cadastrada!\n")
+    except Exception:
+        print("Ocorreu um erro ao ler as receitas!\n")
 
 
 def receita_aleatoria():
