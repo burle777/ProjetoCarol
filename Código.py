@@ -80,35 +80,41 @@ def visualizar_receitas():
 
 def atualizar_receita():
     visualizar_receitas()
-    index = int(input("Digite o número da receita que deseja atualizar: ")) - 1
-    receitas = []
-    
-    with open(arquivo_receitas, 'r', newline='', encoding='utf-8') as f:
-        reader = csv.reader(f)
-        receitas = list(reader)
-    
-    if 0 <= index < len(receitas):
-        nome = input("Novo nome da receita (deixe em branco para não alterar): ")
-        pais = input("Novo país de origem (deixe em branco para não alterar): ")
-        ingredientes = input("Novos ingredientes (deixe em branco para não alterar): ")
-        modo_preparo = input("Novo modo de preparo (deixe em branco para não alterar): ")
+    try:
+        index = int(input("Digite o número da receita que deseja atualizar: ")) - 1
+        receitas = []
         
-        if nome:
-            receitas[index][0] = nome
-        if pais:
-            receitas[index][1] = pais
-        if ingredientes:
-            receitas[index][2] = ingredientes
-        if modo_preparo:
-            receitas[index][3] = modo_preparo
+        with open(arquivo_receitas, 'r', newline='', encoding='utf-8') as f:
+            reader = csv.reader(f)
+            receitas = list(reader)
         
-        with open(arquivo_receitas, 'w', newline='', encoding='utf-8') as f:
-            writer = csv.writer(f)
-            writer.writerows(receitas)
+        if 0 <= index < len(receitas):
+            nome = input("Novo nome da receita (deixe em branco para não alterar): ")
+            pais = input("Novo país de origem (deixe em branco para não alterar): ")
+            ingredientes = input("Novos ingredientes (deixe em branco para não alterar): ")
+            modo_preparo = input("Novo modo de preparo (deixe em branco para não alterar): ")
+            
+            if nome:
+                receitas[index][0] = nome
+            if pais:
+                receitas[index][1] = pais
+            if ingredientes:
+                receitas[index][2] = ingredientes
+            if modo_preparo:
+                receitas[index][3] = modo_preparo
+            
+            with open(arquivo_receitas, 'w', newline='', encoding='utf-8') as f:
+                writer = csv.writer(f)
+                writer.writerows(receitas)
         
         print("Receita atualizada com sucesso!\n")
+
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número.\n")
+        
     else:
         print("Número da receita inválido.\n")
+
 
 
 def deletar_receita():
