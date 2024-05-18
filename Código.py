@@ -111,7 +111,7 @@ def atualizar_receita():
 
     except ValueError:
         print("Entrada inválida. Por favor, digite um número.\n")
-        
+
     else:
         print("Número da receita inválido.\n")
 
@@ -119,23 +119,28 @@ def atualizar_receita():
 
 def deletar_receita():
     visualizar_receitas()
-    index = int(input("Digite o número da receita que deseja deletar: ")) - 1
-    receitas = []
-    
-    with open(arquivo_receitas, 'r', newline='', encoding='utf-8') as f:
-        reader = csv.reader(f)
-        receitas = list(reader)
-    
-    if 0 <= index < len(receitas):
-        receitas.pop(index)
+    try:
+        index = int(input("Digite o número da receita que deseja deletar: ")) - 1
+        receitas = []
         
-        with open(arquivo_receitas, 'w', newline='', encoding='utf-8') as f:
-            writer = csv.writer(f)
-            writer.writerows(receitas)
+        with open(arquivo_receitas, 'r', newline='', encoding='utf-8') as f:
+            reader = csv.reader(f)
+            receitas = list(reader)
         
-        print("Receita deletada com sucesso!\n")
-    else:
-        print("Número da receita inválido.\n")
+        if 0 <= index < len(receitas):
+            receitas.pop(index)
+            
+            with open(arquivo_receitas, 'w', newline='', encoding='utf-8') as f:
+                writer = csv.writer(f)
+                writer.writerows(receitas)
+            
+            print("Receita deletada com sucesso!\n")
+
+        else:
+            print("Número da receita inválido.\n")
+    
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número. \n")
 
 
 def filtrar_por_pais():
