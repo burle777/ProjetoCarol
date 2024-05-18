@@ -61,11 +61,14 @@ def adicionar_receita():
     modo_preparo = input("Modo de preparo: ")
     nova_receita = [nome, pais, ingredientes, modo_preparo]
     
-    with open(arquivo_receitas, 'a', newline='', encoding='utf-8') as f:
-        writer = csv.writer(f)
-        writer.writerow(nova_receita)
-    
-    print("Receita adicionada com sucesso!\n")
+    try:
+        with open(arquivo_receitas, 'a', newline='', encoding='utf-8') as f:
+            writer = csv.writer(f)
+            writer.writerow(nova_receita)
+        
+        print("Receita adicionada com sucesso!\n")
+    except Exception:
+        print("Erro ao adicionar receita!\n")
 
 
 def visualizar_receitas():
