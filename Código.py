@@ -20,12 +20,15 @@ def menu_principal():
             """)
         print("1 - Adicionar Nova Receita")
         print("2 - Visualizar Todas as Receitas")
-        print("3 - Atualizar Receita Existente")
-        print("4 - Deletar Receita")
-        print("5 - Filtrar Receitas Por País")
-        print("6 - Sugestão de Receita Aleatória")
-        print("7 - Escolher receita por ingredientes")
-        print("8 - Adicionar Receita aos Favoritos")
+        print("3 - Visualizar Receitas Favoritas")
+        print("4 - Atualizar Receita Existente")
+        print("5 - Deletar Receita")
+        print("6 - Adicionar Receita aos Favoritos")
+        print("7 - Filtrar Receitas Por País")
+        print("8 - Sugestão de Receita Aleatória")
+        print("9 - Escolher receita por ingredientes")
+        
+        
         print("0 - Sair")
         
         escolha = input("Escolha uma opção: ")
@@ -35,17 +38,19 @@ def menu_principal():
         elif escolha == '2':
             visualizar_receitas()
         elif escolha == '3':
-            atualizar_receita()
+            visualizar_fav()
         elif escolha == '4':
-            deletar_receita()
+            atualizar_receita()
         elif escolha == '5':
-            filtrar_por_pais()
+            deletar_receita()
         elif escolha == '6':
-            receita_aleatoria()
-        elif escolha == '7':
-            buscar_por_ingredientes()
-        elif escolha == '8':
             fav()
+        elif escolha == '7':
+            filtrar_por_pais()
+        elif escolha == '8':
+            receita_aleatoria()
+        elif escolha == '9':
+            buscar_por_ingredientes()
         elif escolha == '0':
             print("Saindo do sistema...")
             break
@@ -76,6 +81,19 @@ def visualizar_receitas():
             reader = csv.reader(f)
             for i, row in enumerate(reader, 1):
                 print(f"{i}. Nome: {row[0]}, País: {row[1]}, Ingredientes: {row[2]}, Modo de Preparo: {row[3]}, Favorito: {row[4]}")
+    except FileNotFoundError:
+        print("Ainda não há receitas cadastradas.\n")
+
+def visualizar_fav():
+    try:
+        with open(arquivo_receitas, 'r', newline='', encoding='utf-8') as f:
+            reader = csv.reader(f)
+            favoritos = [row for row in reader if row[4].lower() == "true"] #list comprehension para reduzir linhas do codigo
+            if favoritos:
+                for i, row in enumerate(favoritos, 1):
+                    print(f"{i}. Nome: {row[0]}, País: {row[1]}, Ingredientes: {row[2]}, Modo de Preparo: {row[3]}, Favorito: {row[4]}")
+            else:
+                print("Não há receitas favoritas.\n")
     except FileNotFoundError:
         print("Ainda não há receitas cadastradas.\n")
 
