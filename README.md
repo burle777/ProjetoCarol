@@ -1,6 +1,7 @@
 # Livro de Receitas em Python
 
-Este projeto é um livro de receitas interativo criado em Python, que permite aos usuários adicionar, visualizar, atualizar e gerenciar suas receitas favoritas de maneira simples e intuitiva.
+Este projeto é um livro de receitas interativo criado em Python, que permite aos usuários adicionar, visualizar, atualizar e gerenciar suas receitas favoritas de maneira simples e intuitiva. Este projeto foi realizado para a cadeira de fundamentos de programação da Cesar School.
+Feito pelos alunos Guilherme Mourão, Henrique Tefile, André Burle e Guilherme Vinícius
 
 ![License](https://img.shields.io/badge/license-MIT-brightgreen)
 
@@ -21,7 +22,7 @@ Este projeto é um livro de receitas interativo criado em Python, que permite ao
 - [Fluxograma](#fluxograma-do-projeto)
 - [Autores](#autores)
 
-## Instalação
+# Instalação
 Para instalar e configurar o ambiente do projeto, siga as etapas abaixo:
 
 1. Clone o repositório:
@@ -121,16 +122,16 @@ Essa parte do programa faz com que o programa encerre quando o usuário inserir 
     Saindo do sistema...
 
 
-## Licença
+# Licença
 Este projeto está protegido por direitos autorais e é licenciado sob os termos da MIT License. Consulte o arquivo [LICENSE](https://github.com/burle777/ProjetoCarol/blob/main/LICENSE.md) para obter mais informações.
 
 
-## Fluxograma do projeto:
+# Fluxograma do projeto:
 ![Fluxograma Receitas](https://github.com/burle777/ProjetoCarol/blob/main/Fluxograma%20Carol%20-%20fluxograma%20carol.jpg)
 
 
-## Autores
+# Autores
 - Guilherme Mourão
 - Henrique Tefile
 - André Burle
-- Guilherme Carvalho
+- Guilherme Vinícius
