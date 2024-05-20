@@ -18,7 +18,7 @@ Este projeto é um livro de receitas interativo criado em Python, que permite ao
   - [Escolher a Receita pelos Ingredientes](#escolher-a-receita-pelos-ingredientes)
   - [Sair do programa](#sair-do-programa)
 - [Licença](#licença)
-- [Fluxograma](#fluxograma)
+- [Fluxograma](#fluxograma-do-projeto)
 - [Autores](#autores)
 
 ## Instalação
@@ -57,7 +57,7 @@ A segunda função permite visualizar todas as receitas existentes no livro. As 
 ## Visualizar Receitas Favoritas
 A terceira função exibe as receitas que foram adicionadas à lista de favoritos. O programa retorna a lista de receitas favoritas. Caso nenhuma esteja adicionada, o programa retorna uma mensagem de que não há nenhuma receita favorita.
 ### Exemplo de uso:
-- 1.
+- "1"
 #### Resultado:
     (Receitas que foram adicionadas na lista.)
 
@@ -66,7 +66,7 @@ A terceira função exibe as receitas que foram adicionadas à lista de favorito
 A quarta função permite atualizar uma receita existente. O usuário pode alterar o nome, o país, os ingredientes e o modo de preparo. Caso o usuário não queira alterar alguma das opções, ele deverá deixar em branco.
 Após alterar a receita, ela é salva no livro de receitas.
 ### Exemplo de uso:
-- 1.
+- "1"
 #### Resultado:
     Novo Nome: Bolo de Cenoura
     Novo País de Origem: Brasil
@@ -77,7 +77,7 @@ Após alterar a receita, ela é salva no livro de receitas.
 ## Deletar Receitas
 A quinta função permite excluir uma receita do livro de receitas. São mostradas na tela as receitas adicionadas anteriormente. O usuário insere o número da receita que deseja excluir. A receita é excluída. Caso o número da receita seja inválido, o programa não apaga nenhuma receita e retorna uma mensagem de erro.
 ### Exemplo de uso:
-- 1(Bolo de cenoura)
+- "1(Bolo de cenoura)"
 #### Resultado:
     Receita deletada com sucesso.
 
@@ -85,7 +85,7 @@ A quinta função permite excluir uma receita do livro de receitas. São mostrad
 ## Adicionar uma Receita à Lista de Favoritos
 A sexta função permite adicionar uma receita à lista de favoritos. É pedido que ele insira o nome da receita que deseja adicionar à lista de favoritos. Caso o nome da receita não seja encontrado na lista, o programa retornará uma mensagem informando que a receita não foi encontrada.
 ### Exemplo de uso:
-- Bolo de cenoura
+- "Bolo de cenoura"
 #### Resultado:
     (Receita adicionada na lista de favoritos!)
 
@@ -94,7 +94,7 @@ A sexta função permite adicionar uma receita à lista de favoritos. É pedido 
 A sétima função permite filtrar receitas pelo país de origem. É pedido que ele insira o país das receitas que deseja ver.
 O programa retorna as receitas do país escolhido pelo usuário. Caso nenhuma receita seja encontrada para o país selecionado, o programa retorna uma mensagem informando que nenhuma receita daquele país foi encontrada.
 ### Exemplo de uso:
-- Brasil
+- "Brasil"
 #### Resultado:
     Bolo de cenoura
 
@@ -102,26 +102,33 @@ O programa retorna as receitas do país escolhido pelo usuário. Caso nenhuma re
 ## Sugerir uma Receita Aleatória
 A oitava função sugere uma receita aleatória ao usuário. O programa retorna uma receita aleatória da lista de receitas.
 #### Resultado:
-Receita: Bolo de Cenoura
-Ingredientes: Farinha, Açúcar, Ovos, Cenoura
-Modo de Preparo: Misture todos os ingredientes e asse por 25 minutos.
+    Receita: Bolo de Cenoura
+    Ingredientes: Farinha, Açúcar, Ovos, Cenoura
+    Modo de Preparo: Misture todos os ingredientes e asse por 25 minutos.
 
 
 ## Escolher a Receita pelos Ingredientes
 A nona função permite escolher uma receita com base nos ingredientes fornecidos. O programa pede que ele insira os ingredientes da receita.
 Após digitar todos os ingredientes, o programa retorna as receitas que contêm os ingredientes inseridos pelo usuário. Caso nenhuma receita seja encontrada, o programa retorna uma mensagem informando que não foram encontradas receitas com os ingredientes desejados.
 ### Exemplo de uso:
-- Farinha, Açúcar, Ovos
+- "Farinha, Açúcar, Ovos"
 #### Resultado:
     Bolo de cenoura
 
 ## Sair do programa
-    Essa parte do programa faz com que o programa encerre quando o usuário inserir 0 no menu de opções.
+Essa parte do programa faz com que o programa encerre quando o usuário inserir 0 no menu de opções.
 #### Resultado:
     Saindo do sistema...
 
+
+## Licença
+Este projeto está protegido por direitos autorais e é licenciado sob os termos da MIT License. Consulte o arquivo [LICENSE](https://github.com/burle777/ProjetoCarol/blob/main/LICENSE.md) para obter mais informações.
+
+
 ## Fluxograma do projeto:
 ![Fluxograma Receitas](https://github.com/burle777/ProjetoCarol/blob/main/Fluxograma%20Carol%20-%20fluxograma%20carol.jpg)
+
+
 ## Autores
 - Guilherme Mourão
 - Henrique Tefile
