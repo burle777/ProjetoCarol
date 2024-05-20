@@ -112,7 +112,7 @@ A oitava função sugere uma receita aleatória ao usuário. O programa retorna 
 A nona função permite escolher uma receita com base nos ingredientes fornecidos. O programa pede que ele insira os ingredientes da receita.
 Após digitar todos os ingredientes, o programa retorna as receitas que contêm os ingredientes inseridos pelo usuário. Caso nenhuma receita seja encontrada, o programa retorna uma mensagem informando que não foram encontradas receitas com os ingredientes desejados.
 ### Exemplo de uso:
-- "Farinha, Açúcar, Ovos"
+- "Farinha, Açúcar, Ovos, Cenoura"
 #### Resultado:
     Bolo de cenoura
 
