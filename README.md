@@ -27,7 +27,7 @@ Para instalar e configurar o ambiente do projeto, siga as etapas abaixo:
 2. Navegue até o diretório do projeto:
     cd ProjetoCarol
 
-## Uso
+# Uso
 ## Adicionar Receitas
 A primeira função do programa permite adicionar novas receitas ao livro de receitas.
 
@@ -45,45 +45,37 @@ A primeira função do programa permite adicionar novas receitas ao livro de rec
 
 ## Visualizar Receitas
 A segunda função permite visualizar todas as receitas existentes no livro. As receitas são exibidas juntamente com seus países de origem, ingredientes e o modo de preparo.
-- O usuário insere o prompt 2.
-
 ### Exemplo de uso:
-2
+- O usuário insere o prompt 2.
 #### Resultado:
-Bolo de Chocolate - Brasil
-Ingredientes: Farinha, Açúcar, Ovos, Chocolate
-Modo de Preparo: Misture todos os ingredientes e asse por 30 minutos.
+    Bolo de Chocolate - Brasil
+    Ingredientes: Farinha, Açúcar, Ovos, Chocolate
+    Modo de Preparo: Misture todos os ingredientes e asse por 30 minutos.
 
 
 ## Visualizar Receitas Favoritas
 A terceira função exibe as receitas que foram adicionadas à lista de favoritos. O programa retorna a lista de receitas favoritas. Caso nenhuma esteja adicionada, o programa retorna uma mensagem de que não há nenhuma receita favorita.
-
+### Exemplo de uso:
 - O usuário insere o prompt 3.
 
-### Exemplo de uso:
-3
 #### Resultado
-Nenhuma receita favorita adicionada.
+    (Receitas que foram adicionadas na lista.)
 
 
 ## Atualizar Receita
-A quarta função permite atualizar uma receita existente.
-
-O usuário insere o prompt 4.
-O programa mostra a lista de receitas e pergunta qual receita ele deseja alterar.
-O usuário pode alterar o nome, o país, os ingredientes e o modo de preparo. Caso o usuário não queira alterar alguma das opções, ele deverá deixar em branco.
+A quarta função permite atualizar uma receita existente. O usuário pode alterar o nome, o país, os ingredientes e o modo de preparo. Caso o usuário não queira alterar alguma das opções, ele deverá deixar em branco.
 Após alterar a receita, ela é salva no livro de receitas.
-Exemplo:
+### Exemplo de uso:
+- O usuário insere o prompt 4.
+- O programa mostra a lista de receitas e pergunta qual receita ele deseja alterar.
 
+### Resultado:
+    (número correspondente à receita)
+    Novo Nome: Bolo de Cenoura
+    Novo País de Origem: Brasil
+    Novos Ingredientes: Farinha, Açúcar, Ovos, Cenoura
+    Novo Modo de Preparo: Misture todos os ingredientes e asse por 25 minutos.
 
-# Exemplo de uso
-4
-# Selecione a receita para atualizar
-1
-Novo Nome: Bolo de Cenoura
-Novo País de Origem: Brasil
-Novos Ingredientes: Farinha, Açúcar, Ovos, Cenoura
-Novo Modo de Preparo: Misture todos os ingredientes e asse por 25 minutos.
 ## Deletar Receitas
 A quinta função permite excluir uma receita do livro de receitas.
 
