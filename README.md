@@ -16,12 +16,10 @@ Este projeto é um livro de receitas interativo criado em Python, que permite ao
   - [Filtrar Receitas pelo País](#filtrar-receitas-pelo-país)
   - [Sugerir uma Receita Aleatória](#sugerir-uma-receita-aleatória)
   - [Escolher a Receita pelos Ingredientes](#escolher-a-receita-pelos-ingredientes)
-- [Contribuição](#contribuição)
 - [Licença](#licença)
 - [Autores](#autores)
 
 ## Instalação
-
 Para instalar e configurar o ambiente do projeto, siga as etapas abaixo:
 
 1. Clone o repositório:
@@ -29,48 +27,46 @@ Para instalar e configurar o ambiente do projeto, siga as etapas abaixo:
 2. Navegue até o diretório do projeto:
     cd ProjetoCarol
 
-Uso
-Adicionar Receitas
+## Uso
+## Adicionar Receitas
 A primeira função do programa permite adicionar novas receitas ao livro de receitas.
 
-O usuário insere o prompt 1.
-Insere o nome da receita.
-Insere o país de origem.
-Insere os ingredientes.
-Insere o modo de preparo.
-A receita é então adicionada.
-Exemplo:
+- O usuário insere o prompt 1.
+- Insere o nome da receita.
+- Insere o país de origem.
+- Insere os ingredientes.
+- Insere o modo de preparo.
+- A receita é então adicionada.
+### Exemplo de uso:
+    Nome da Receita: Bolo de Chocolate
+    País de Origem: Brasil
+    Ingredientes: Farinha, Açúcar, Ovos, Chocolate
+    Modo de Preparo: Misture todos os ingredientes e asse por 30 minutos.
 
-# Exemplo de uso
-1
-Nome da Receita: Bolo de Chocolate
-País de Origem: Brasil
+## Visualizar Receitas
+A segunda função permite visualizar todas as receitas existentes no livro. As receitas são exibidas juntamente com seus países de origem, ingredientes e o modo de preparo.
+- O usuário insere o prompt 2.
+
+### Exemplo de uso:
+2
+#### Resultado:
+Bolo de Chocolate - Brasil
 Ingredientes: Farinha, Açúcar, Ovos, Chocolate
 Modo de Preparo: Misture todos os ingredientes e asse por 30 minutos.
-Visualizar Receitas
-A segunda função permite visualizar todas as receitas existentes no livro.
 
-O usuário insere o prompt 2.
-As receitas são exibidas juntamente com seus países de origem, ingredientes e o modo de preparo.
-Exemplo:
-# Exemplo de uso
-2
-# Resultado
-1. Bolo de Chocolate - Brasil
-   Ingredientes: Farinha, Açúcar, Ovos, Chocolate
-   Modo de Preparo: Misture todos os ingredientes e asse por 30 minutos.
-Visualizar Receitas Favoritas
-A terceira função exibe as receitas que foram adicionadas à lista de favoritos.
 
-O usuário insere o prompt 3.
-O programa retorna a lista de receitas favoritas. Caso nenhuma esteja adicionada, o programa retorna uma mensagem de que não há nenhuma receita favorita.
-Exemplo:
-# Exemplo de uso
+## Visualizar Receitas Favoritas
+A terceira função exibe as receitas que foram adicionadas à lista de favoritos. O programa retorna a lista de receitas favoritas. Caso nenhuma esteja adicionada, o programa retorna uma mensagem de que não há nenhuma receita favorita.
+
+- O usuário insere o prompt 3.
+
+### Exemplo de uso:
 3
-# Resultado
+#### Resultado
 Nenhuma receita favorita adicionada.
-Atualizar Receita
 
+
+## Atualizar Receita
 A quarta função permite atualizar uma receita existente.
 
 O usuário insere o prompt 4.
@@ -79,8 +75,7 @@ O usuário pode alterar o nome, o país, os ingredientes e o modo de preparo. Ca
 Após alterar a receita, ela é salva no livro de receitas.
 Exemplo:
 
-python
-Copiar código
+
 # Exemplo de uso
 4
 # Selecione a receita para atualizar
@@ -89,7 +84,7 @@ Novo Nome: Bolo de Cenoura
 Novo País de Origem: Brasil
 Novos Ingredientes: Farinha, Açúcar, Ovos, Cenoura
 Novo Modo de Preparo: Misture todos os ingredientes e asse por 25 minutos.
-Deletar Receitas
+## Deletar Receitas
 A quinta função permite excluir uma receita do livro de receitas.
 
 O usuário escolhe a opção 5.
@@ -104,7 +99,7 @@ Exemplo:
 1
 # Resultado
 Receita deletada com sucesso.
-Adicionar uma Receita à Lista de Favoritos
+## Adicionar uma Receita à Lista de Favoritos
 A sexta função permite adicionar uma receita à lista de favoritos.
 
 O usuário escolhe a opção 6.
@@ -116,7 +111,7 @@ Exemplo:
 Nome da Receita: Bolo de Cenoura
 # Resultado
 Receita adicionada aos favoritos.
-Filtrar Receitas pelo País
+## Filtrar Receitas pelo País
 A sétima função permite filtrar receitas pelo país de origem.
 
 O usuário escolhe a opção 7.
@@ -130,7 +125,7 @@ Exemplo:
 País: Brasil
 # Resultado
 1. Bolo de Cenoura
-Sugerir uma Receita Aleatória
+## Sugerir uma Receita Aleatória
 A oitava função sugere uma receita aleatória ao usuário.
 
 O usuário escolhe a opção 8.
@@ -144,7 +139,9 @@ Exemplo:
 Receita: Bolo de Cenoura
 Ingredientes: Farinha, Açúcar, Ovos, Cenoura
 Modo de Preparo: Misture todos os ingredientes e asse por 25 minutos.
-Escolher a Receita pelos Ingredientes
+
+## Escolher a Receita pelos Ingredientes
+
 A nona função permite escolher uma receita com base nos ingredientes fornecidos.
 
 O usuário escolhe a opção 9.
@@ -153,23 +150,13 @@ Após digitar todos os ingredientes, o programa retorna as receitas que contêm 
 Exemplo:
 
 
-# Exemplo de uso
+Exemplo de uso
 9
 Ingredientes: Farinha, Açúcar, Ovos
-# Resultado
-1. Bolo de Cenoura
-Contribuição
-Contribuições são bem-vindas! Siga os passos abaixo para contribuir:
+Resultado:
+Bolo de Cenoura
 
-Faça um fork do projeto.
-Crie uma branch para sua feature (git checkout -b feature/nome-da-feature).
-Commit suas alterações (git commit -am 'Adiciona nova feature').
-Envie para a branch (git push origin feature/nome-da-feature).
-Crie um novo Pull Request.
-Licença
-Distribuído sob a licença MIT. Veja LICENSE para mais informações.
-
-Autores
+## Autores
 Guilherme Mourão
 Henrique Tefile
 André Burle
